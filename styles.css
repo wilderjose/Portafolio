@@ -9,20 +9,49 @@ body {
   overflow-x: hidden;
 }
 header {
-  position: fixed; top: 0; width: 100%; z-index: 1000;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 20px 50px; background: rgba(15,15,31,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  background: rgba(15, 15, 31, 0.9);
   border-bottom: 1px solid #00ffea33;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+.logo img {
+  width: 60px;      /* Ajusta el tamaño de la imagen */
+  height: 60px;
+  border-radius: 50%; /* Hace la imagen redonda */
+  object-fit: cover;
+  margin-right: 20px;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
 header h1 {
-  color: #00ffea; font-size: 2em;
-  text-shadow: 0 0 10px #00ffea;
+  font-size: 1.8em;
+  color: #00ffea;
+  letter-spacing: 2px;
+  margin-right: 50px;
 }
 nav a {
-  color: #00ffea; margin-left: 25px; text-decoration: none;
-  font-weight: bold; transition: 0.3s;
+  color: #00ffea;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
-nav a:hover { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
+
+nav a:hover {
+  color: #ff00ff;
+}
+
 
 /* Secciones */
 section {
