@@ -170,6 +170,21 @@ window.addEventListener('scroll', () => {
   const rect = skillsSection.getBoundingClientRect();
   if(rect.top < window.innerHeight - 100) animateSkills();
 });
+
+
+function ajustarAlturaIframes() {
+  const certificados = document.querySelectorAll('.certificado iframe');
+  certificados.forEach(iframe => {
+    const width = iframe.offsetWidth;
+    // Ajuste de altura según proporción aproximada PDF (3:4)
+    iframe.style.height = (width * 4 / 3) + 'px';
+  });
+}
+
+// Ajustar al cargar y al redimensionar la ventana
+window.addEventListener('load', ajustarAlturaIframes);
+window.addEventListener('resize', ajustarAlturaIframes);
+
 </script>
 
 </body>
