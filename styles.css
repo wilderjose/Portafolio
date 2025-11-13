@@ -126,20 +126,22 @@ section {
   border: 1px solid #00ffea;
   padding: 15px;
   border-radius: 15px;
-  width: 100%; /* Ocupa todo el ancho de la columna */
+  width: 100%;
   text-align: center;
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .certificado:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 15px #ff00ff;
 }
-
 .certificado iframe {
   width: 100%;
-  height: 400px;
+  aspect-ratio: 3/4; /* Relación de aspecto aproximada del PDF */
   border-radius: 10px;
+  flex: 1; /* Ocupa todo el espacio disponible dentro del contenedor */
 }
 
 .certificado p {
