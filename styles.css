@@ -182,10 +182,10 @@ footer {
   section { padding:80px 15px 40px; }
   .skill-bar-inner { height:10px; }
 }
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .certificados-container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr; /* una columna en móviles */
+    gap: 15px; /* opcional, para separar tarjetas */
   }
 
   .certificado iframe {
