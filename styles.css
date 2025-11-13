@@ -1,118 +1,80 @@
- * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Orbitron', sans-serif;
-    }
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+body {
+  background: #0f0f1f;
+  color: #00ffea;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+header {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 50px; background: rgba(15,15,31,0.9);
+  border-bottom: 1px solid #00ffea33;
+}
+header h1 {
+  color: #00ffea; font-size: 2em;
+  text-shadow: 0 0 10px #00ffea;
+}
+nav a {
+  color: #00ffea; margin-left: 25px; text-decoration: none;
+  font-weight: bold; transition: 0.3s;
+}
+nav a:hover { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
 
-    body {
-      background: #0f0f1f;
-      color: #00ffea;
-      scroll-behavior: smooth;
-    }
+/* Secciones */
+section {
+  min-height: 100vh;
+  padding: 120px 50px 50px;
+  background: linear-gradient(180deg, #0f0f1f, #080820);
+  position: relative;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      border-bottom: 1px solid #00ffea33;
-      position: sticky;
-      top: 0;
-      background: rgba(15, 15, 31, 0.9);
-      z-index: 1000;
-    }
+/* Fondo parallax de matrix */
+#matrixCanvas {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  z-index:0; pointer-events:none;
+}
 
-    header h1 {
-      font-size: 1.8em;
-      color: #00ffea;
-      letter-spacing: 2px;
-    }
+/* Introducción */
+.intro { max-width: 800px; margin:auto; position: relative; z-index:1; }
+.intro h2 { font-size: 3em; color:#ff00ff; margin-bottom:20px; text-shadow:0 0 20px #ff00ff; }
+.intro p { font-size:1.2em; line-height:1.6; }
 
-    nav a {
-      color: #00ffea;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* Tarjetas */
+.cards {
+  display: flex; flex-wrap: wrap; gap:30px; margin-top:50px; z-index:1; position: relative;
+}
+.card {
+  background: rgba(0,255,234,0.1); border:1px solid #00ffea;
+  padding:20px; width:250px; border-radius:15px;
+  transition:0.3s; cursor:pointer;
+}
+.card:hover { transform: translateY(-10px); box-shadow:0 0 20px #ff00ff; }
+.card h3 { margin-bottom:10px; color:#ff00ff; }
+.card p { font-size:0.95em; line-height:1.4; color:#00ffe0; }
 
-    nav a:hover {
-      color: #ff00ff;
-    }
+/* Habilidades con barras */
+.skill {
+  margin: 20px 0;
+}
+.skill-name { margin-bottom:5px; font-weight:bold; }
+.skill-bar {
+  width: 100%; background: #111; border-radius: 10px;
+  overflow: hidden;
+}
+.skill-bar-inner {
+  width:0; height:15px; background:#ff00ff; border-radius:10px;
+  transition: width 2s ease-in-out;
+}
 
-    section {
-      min-height: 100vh;
-      padding: 80px 50px;
-    }
+/* Footer */
+footer {
+  text-align:center; padding:30px;
+  border-top:1px solid #00ffea33; color:#00ffea; background:#0f0f1f;
+}
 
-    .intro {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .intro h2 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: #ff00ff;
-    }
-
-    .intro p {
-      font-size: 1.2em;
-      max-width: 600px;
-      line-height: 1.6;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .card {
-      background: rgba(0, 255, 234, 0.1);
-      border: 1px solid #00ffea;
-      padding: 20px;
-      width: 250px;
-      border-radius: 15px;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px #ff00ff;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #ff00ff;
-    }
-
-    .card p {
-      font-size: 0.95em;
-      line-height: 1.4;
-      color: #00ffe0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      border-top: 1px solid #00ffea33;
-      color: #00ffea;
-      background: #0f0f1f;
-    }
-
-    /* Animación futurista */
-    .glow {
-      text-shadow: 0 0 5px #00ffe0, 0 0 10px #00ffe0, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-    }
-
-    @media (max-width: 768px) {
-      .cards {
-        justify-content: center;
-      }
-    }
+/* Responsive */
+@media(max-width:768px){ .cards { justify-content:center; } }
