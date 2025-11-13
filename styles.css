@@ -115,10 +115,11 @@ section {
 
 .certificados-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 por fila */
+  grid-template-columns: repeat(2, 1fr); /* 2 por fila en escritorio */
   gap: 20px;
-  width: 100%;
+  justify-items: center;
 }
+
 
 .certificado {
   background: rgba(0,255,234,0.1);
