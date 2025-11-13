@@ -127,7 +127,7 @@ section {
   padding: 15px;
   border-radius: 15px;
   width: 100%;
-  height: 350px;       /* ALTURA FIJA → SIN SCROLL */
+  height: 280px;       /* ALTURA FIJA → SIN SCROLL */
   text-align: center;
   transition: 0.3s;
   display: flex;
