@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Futurista - Wilder Suárez</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* Reset y estilo base */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+body {
+  background: #0f0f1f;
+  color: #00ffea;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+header {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 50px; background: rgba(15,15,31,0.9);
+  border-bottom: 1px solid #00ffea33;
+}
+header h1 {
+  color: #00ffea; font-size: 2em;
+  text-shadow: 0 0 10px #00ffea;
+}
+nav a {
+  color: #00ffea; margin-left: 25px; text-decoration: none;
+  font-weight: bold; transition: 0.3s;
+}
+nav a:hover { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
+
+/* Secciones */
+section {
+  min-height: 100vh;
+  padding: 120px 50px 50px;
+  background: linear-gradient(180deg, #0f0f1f, #080820);
+  position: relative;
+}
+
+/* Fondo parallax de matrix */
+#matrixCanvas {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  z-index:0; pointer-events:none;
+}
+
+/* Introducción */
+.intro { max-width: 800px; margin:auto; position: relative; z-index:1; }
+.intro h2 { font-size: 3em; color:#ff00ff; margin-bottom:20px; text-shadow:0 0 20px #ff00ff; }
+.intro p { font-size:1.2em; line-height:1.6; }
+
+/* Tarjetas */
+.cards {
+  display: flex; flex-wrap: wrap; gap:30px; margin-top:50px; z-index:1; position: relative;
+}
+.card {
+  background: rgba(0,255,234,0.1); border:1px solid #00ffea;
+  padding:20px; width:250px; border-radius:15px;
+  transition:0.3s; cursor:pointer;
+}
+.card:hover { transform: translateY(-10px); box-shadow:0 0 20px #ff00ff; }
+.card h3 { margin-bottom:10px; color:#ff00ff; }
+.card p { font-size:0.95em; line-height:1.4; color:#00ffe0; }
+
+/* Habilidades con barras */
+.skill {
+  margin: 20px 0;
+}
+.skill-name { margin-bottom:5px; font-weight:bold; }
+.skill-bar {
+  width: 100%; background: #111; border-radius: 10px;
+  overflow: hidden;
+}
+.skill-bar-inner {
+  width:0; height:15px; background:#ff00ff; border-radius:10px;
+  transition: width 2s ease-in-out;
+}
+
+/* Footer */
+footer {
+  text-align:center; padding:30px;
+  border-top:1px solid #00ffea33; color:#00ffea; background:#0f0f1f;
+}
+
+/* Responsive */
+@media(max-width:768px){ .cards { justify-content:center; } }
+</style>
+</head>
+<body>
+
+<canvas id="matrixCanvas"></canvas>
+
+<header>
+  <h1>Wilder Suárez</h1>
+  <nav>
+    <a href="#about">Perfil</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+
+<section id="about">
+  <div class="intro">
+    <h2>Ingeniero en Cibernética Electrónica</h2>
+    <p>Soy Wilder Suárez, estudiante de Ingeniería en Cibernética Electrónica, con competencias en electrónica, cómputo y redes. Desarrollo aplicaciones móviles con Flutter y sistemas electrónicos inteligentes, integrando hardware y software para soluciones innovadoras.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 style="text-align:center; color:#ff00ff; text-shadow:0 0 20px #ff00ff;">Habilidades Técnicas</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Programación</h3>
+      <p>Dart (Flutter), Python, C, C++, PHP, HTML, CSS</p>
+    </div>
+    <div class="card">
+      <h3>Frameworks</h3>
+      <p>Flutter, desarrollo Android e iOS, desarrollo web</p>
+    </div>
+    <div class="card">
+      <h3>Hardware</h3>
+      <p>Arduino, ESP32, ESP8266, sensores analógicos y digitales, diseño de PCB</p>
+    </div>
+    <div class="card">
+      <h3>Redes</h3>
+      <p>Cisco Packet Tracer, GNS3, routers y switches</p>
+    </div>
+    <div class="card">
+      <h3>Control de Versiones</h3>
+      <p>Git, GitHub</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:50px;">Nivel de Habilidades</h3>
+  <div class="skill">
+    <div class="skill-name">Flutter</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="90%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Python</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="85%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">C/C++</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="80%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Redes (Cisco/GNS3)</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="75%"></div></div>
+  </div>
+</section>
+
+
+
+<section id="contact">
+  <h2 style="text-align:center; color:#ff00ff; text-shadow:0 0 20px #ff00ff;">Contacto</h2>
+  <p style="text-align:center;">Email: <a href="mailto:wilder.suarez@est.ulsa.edu.ni">wilder.suarez@est.ulsa.edu.ni</a></p>
+  <p style="text-align:center;">Teléfono: 7629-0588</p>
+  <p style="text-align:center;">Ubicación: Calle cualquiera 123, Cualquier lugar, CP:12345</p>
+  <p style="text-align:center;">Sitio web: <a href="https://www.unsitiogenial.es" target="_blank">www.unsitiogenial.es</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Wilder Suárez - Todos los derechos reservados
+</footer>
+
+<script>
+// Smooth scroll
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Matrix background effect
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const letters = '01';
+const fontSize = 16;
+const columns = canvas.width / fontSize;
+const drops = Array.from({length: columns}, () => 1);
+
+function drawMatrix() {
+  ctx.fillStyle = 'rgba(15,15,31,0.1)';
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = '#00ffea';
+  ctx.font = fontSize + 'px Orbitron';
+  for(let i=0;i<drops.length;i++){
+    const text = letters[Math.floor(Math.random()*letters.length)];
+    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+    if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
+    drops[i]++;
+  }
+}
+setInterval(drawMatrix, 50);
+window.addEventListener('resize', () => {canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
+
+// Animación barras de habilidades
+function animateSkills() {
+  const skills = document.querySelectorAll('.skill-bar-inner');
+  skills.forEach(skill => {
+    const width = skill.getAttribute('data-width');
+    skill.style.width = width;
+  });
+}
+window.addEventListener('scroll', () => {
+  const skillsSection = document.getElementById('skills');
+  const rect = skillsSection.getBoundingClientRect();
+  if(rect.top < window.innerHeight - 100) animateSkills();
+});
+</script>
+
+</body>
+</html>
