@@ -138,11 +138,14 @@ section {
   box-shadow: 0 0 15px #ff00ff;
 }
 .certificado iframe {
-  width: 100%;
-  aspect-ratio: 3/4; /* Relación de aspecto aproximada del PDF */
+  width: 100%;      /* ocupa todo el ancho del contenedor */
+  height: auto;     /* altura automática según proporción */
+  min-height: 250px;
+  max-height: 400px;
   border-radius: 10px;
-  flex: 1; /* Ocupa todo el espacio disponible dentro del contenedor */
+  overflow: hidden; /* elimina scroll */
 }
+
 
 .certificado p {
   margin: 10px 0;
