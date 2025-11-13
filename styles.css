@@ -21,12 +21,15 @@ header {
 }
 
 .logo img {
-  width: 60px;      /* Ajusta el tamaño de la imagen */
+  width: 60px;
   height: 60px;
-  border-radius: 50%; /* Hace la imagen redonda */
+  border-radius: 50%;
   object-fit: cover;
   margin-right: 20px;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffe0;
 }
+
 .header-content {
   display: flex;
   align-items: center;
