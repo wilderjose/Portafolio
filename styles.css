@@ -146,13 +146,6 @@ section {
   transform: translateY(-5px);
   box-shadow: 0 0 15px #ff00ff;
 }
-.certificado iframe {
-  width: 100%;
-  height: 350px; /* altura fija que no genere scroll */
-  border-radius: 10px;
-  border: none;
-}
-
 
 
 .certificado p {
