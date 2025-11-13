@@ -178,6 +178,10 @@ function ajustarAlturaIframes() {
     const width = iframe.offsetWidth;
     // Ajuste de altura según proporción aproximada PDF (3:4)
     iframe.style.height = (width * 1.2) + 'px';
+     if (altura < 250) altura = 250;  // mínimo 250px
+    if (altura > 400) altura = 400;  // máximo 400px
+
+    iframe.style.height = altura + 'px';
   });
 }
 
