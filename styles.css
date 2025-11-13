@@ -185,6 +185,7 @@ footer {
 @media (max-width: 768px) {
   .certificados-container {
     grid-template-columns: 1fr; /* una columna en móviles */
+    gap: 15px; /* opcional, para separar tarjetas */
   }
 
   .certificado iframe {
