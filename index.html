@@ -3,172 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portafolio Futurista - Wilder Suárez</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>Portafolio - Wilder Suárez</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
-
-
+<link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
+<!-- FONDO MATRIX -->
 <canvas id="matrixCanvas"></canvas>
-<header>
-  <!-- Imagen a la izquierda -->
-  <div class="logo">
-    <img src="wilder.jpg" alt="Foto de Wilder" />
-  </div>
 
-  <!-- Título y navegación -->
-  <div class="header-content">
-    <h1>Wilder José Suárez Morales</h1>
-    <nav>
-  <a href="#about">Perfil</a>
-  <a href="#skills">Habilidades</a>
-  <a href="https://www.linkedin.com/in/wilder-jose-suarez-morales-740b69349" target="_blank" rel="noopener noreferrer">
-    Certificados
-  </a>
-  <a href="#contact">Contacto</a>
-</nav>
+<!-- NAVBAR -->
+<header class="navbar">
+  <h1 class="logo-title">Portafolio</h1>
 
+  <nav class="navbar-links">
+    <a href="#home">Home</a>
+    <a href="#about">Perfil</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <div class="navbar-buttons">
+    <a href="#contact" class="btn-outline">Hire Me</a>
+    <a href="#projects" class="btn-white">View Works</a>
   </div>
 </header>
 
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h2 class="hello">Hola, soy <span class="name">Wilder</span></h2>
 
-<section id="about">
-  <div class="intro">
-    <h2>Ingeniero en Cibernética Electrónica</h2>
-    <p>Soy Wilder Suárez, estudiante de Ingeniería en Cibernética Electrónica, con competencias en electrónica, cómputo y redes. Desarrollo aplicaciones móviles con Flutter y sistemas electrónicos inteligentes, integrando hardware y software para soluciones innovadoras.</p>
-  </div>
-</section>
+    <h1 class="profession">Ingeniero en Cibernética Electrónica <br> Web Designer & Developer</h1>
 
-<section id="skills">
-  <h2 style="text-align:center; color:#ff00ff; text-shadow:0 0 20px #ff00ff;">Habilidades Técnicas</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Programación</h3>
-      <p>Dart (Flutter), Python, C,React, HTML, CSS</p>
-    </div>
-    <div class="card">
-      <h3>Frameworks</h3>
-      <p>Flutter, desarrollo Android e iOS, desarrollo web</p>
-    </div>
-    
-    <div class="card">
-      <h3>Redes</h3>
-      <p>Cisco Packet Tracer, GNS3, routers y switches</p>
-    </div>
-    <div class="card">
-      <h3>Control de Versiones</h3>
-      <p>Git, GitHub</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-white-big">Contactame</a>
+      <a href="https://wilderjose.github.io/Portafolio/" class="btn-outline-big">Acerca de mí</a>
     </div>
   </div>
 
-  <h3 style="margin-top:50px;">Nivel de Habilidades</h3>
-  <div class="skill">
-    <div class="skill-name">Flutter</div>
-    <div class="skill-bar"><div class="skill-bar-inner" data-width="50%"></div></div>
-  </div>
-  <div class="skill">
-    <div class="skill-name">Python</div>
-    <div class="skill-bar"><div class="skill-bar-inner" data-width="50%"></div></div>
-  </div>
-  <div class="skill">
-    <div class="skill-name">C/C++</div>
-    <div class="skill-bar"><div class="skill-bar-inner" data-width="60%"></div></div>
-  </div>
-  <div class="skill">
-    <div class="skill-name">Redes (Cisco/GNS3)</div>
-    <div class="skill-bar"><div class="skill-bar-inner" data-width="85%"></div></div>
+  <div class="hero-img">
+    <img src="wilder.jpg" class="photo" alt="Foto de Wilder">
   </div>
 </section>
-
-<section id="Certificados">
-  
-</section>
-
-
-
-
-<section id="contact">
-  <h2 style="text-align:center; color:#ff00ff; text-shadow:0 0 20px #ff00ff;">Contacto</h2>
-  <p style="text-align:center;">Email: <a href="mailto:wilder.suarez@est.ulsa.edu.ni">wilder.suarez@est.ulsa.edu.ni</a></p>
-  <p style="text-align:center;">Teléfono: 7629-0588</p>
-  <p style="text-align:center;">Leon, Nicaragua primera de san Mateo</p>
-  <p style="text-align:center;">Sitio web: <a href=" https://wilderjose.github.io/Portafolio/" target="_blank"> https://wilderjose.github.io/Portafolio/</a></p>
-</section>
-
-<footer>
-  &copy; 2025 Wilder Suárez - Todos los derechos reservados
-</footer>
-
-<script>
-// Smooth scroll
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-  });
-});
-
-// Matrix background effect
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-const letters = '01';
-const fontSize = 16;
-const columns = canvas.width / fontSize;
-const drops = Array.from({length: columns}, () => 1);
-
-function drawMatrix() {
-  ctx.fillStyle = 'rgba(15,15,31,0.1)';
-  ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle = '#00ffea';
-  ctx.font = fontSize + 'px Orbitron';
-  for(let i=0;i<drops.length;i++){
-    const text = letters[Math.floor(Math.random()*letters.length)];
-    ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-    if(drops[i]*fontSize>canvas.height && Math.random()>0.975) drops[i]=0;
-    drops[i]++;
-  }
-}
-setInterval(drawMatrix, 50);
-window.addEventListener('resize', () => {canvas.width=window.innerWidth; canvas.height=window.innerHeight;});
-
-// Animación barras de habilidades
-function animateSkills() {
-  const skills = document.querySelectorAll('.skill-bar-inner');
-  skills.forEach(skill => {
-    const width = skill.getAttribute('data-width');
-    skill.style.width = width;
-  });
-}
-window.addEventListener('scroll', () => {
-  const skillsSection = document.getElementById('skills');
-  const rect = skillsSection.getBoundingClientRect();
-  if(rect.top < window.innerHeight - 100) animateSkills();
-});
-
-
-function ajustarAlturaIframes() {
-  const certificados = document.querySelectorAll('.certificado iframe');
-  certificados.forEach(iframe => {
-    const width = iframe.offsetWidth;
-    // Ajuste de altura según proporción aproximada PDF (3:4)
-    iframe.style.height = (width * 1.2) + 'px';
-     if (altura < 250) altura = 250;  // mínimo 250px
-    if (altura > 400) altura = 400;  // máximo 400px
-
-    iframe.style.height = altura + 'px';
-  });
-}
-
-// Ajustar al cargar y al redimensionar la ventana
-window.addEventListener('load', ajustarAlturaIframes);
-window.addEventListener('resize', ajustarAlturaIframes);
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
