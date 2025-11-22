@@ -172,25 +172,5 @@ body.skills-body {
 
 </section>
 
-<script>
-// Animación barras al hacer scroll
-document.addEventListener('DOMContentLoaded', () => {
-  const skillsSection = document.querySelector('.skills-section');
-  const skillBars = document.querySelectorAll('.skill-bar-inner');
-
-  function animateSkills() {
-    const rect = skillsSection.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100) {
-      skillBars.forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width');
-      });
-    }
-  }
-
-  window.addEventListener('scroll', animateSkills);
-  animateSkills(); // Ejecutar al cargar por si ya está visible
-});
-</script>
-
 </body>
 </html>
