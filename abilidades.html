@@ -103,6 +103,15 @@ body.skills-body {
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+  .cards {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .cards {
     flex-direction: column;
@@ -111,6 +120,34 @@ body.skills-body {
 
   .card {
     width: 90%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar-buttons {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-title {
+    font-size: 1.5rem;
+  }
+
+  .skill-bar {
+    height: 12px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card p {
+    font-size: 12px;
   }
 }
 </style>
