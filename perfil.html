@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí - Wilder Suárez</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+/* --- RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- BODY --- */
+body.about-body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0f0f1f;
+  color: #fff;
+}
+
+/* --- NAVBAR --- */
+
+
+/* --- ABOUT SECTION --- */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.about-title {
+  font-size: 48px;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+/* Contenedor principal */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* Foto */
+.about-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 20px #00eaff;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}
+
+/* Texto */
+.about-text {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease;
+}
+
+.about-text h2 {
+  font-size: 28px;
+  color: #00eaff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #00eaff;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+}
+
+/* Botón */
+.about-text a {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #00eaff;
+  color: #0f0f1f;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.about-text a:hover {
+  background-color: #fff;
+  color: #00eaff;
+}
+
+/* Animaciones al entrar en viewport */
+.about-photo.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-text.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-title {
+    font-size: 36px;
+  }
+
+  .about-photo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+}
+</style>
+</head>
+
+<body class="about-body">
+
+<header class="navbar">
+  <h1 class="logo-title">Portafolio</h1>
+  <nav class="navbar-links">
+    <a class="home" href="index.html">Home</a>
+    <a class="as" class="about" href="#about">Perfil</a>
+    <a class="as" class="skills" href="abilidades.html">Habilidades</a>
+    <a class="as" class="contact" href="#contact">Contacto</a>
+  </nav>
+  <div class="navbar-buttons">
+    <a href="#contact" class="btn-outline">Hire Me</a>
+    <a href="#projects" class="btn-white">View Works</a>
+  </div>
+</header>
+
+<section class="about-section">
+
+  <h1 class="about-title">Sobre mí</h1>
+
+  <div class="about-container">
+
+    <img src="wilder.jpg" class="about-photo" alt="Wilder">
+
+    <div class="about-text">
+      <h2>Hola, soy Wilder Suárez</h2>
+      <p>
+        Soy Ingeniero en Cibernética Electrónica con experiencia en 
+        desarrollo web, diseño de interfaces y sistemas tecnológicos. 
+        Me apasiona crear soluciones eficientes, estéticas y fáciles de usar.
+      </p>
+
+      <p>
+        Manejo tecnologías como HTML, CSS, JavaScript, React, Python, 
+        Django y bases de datos SQL. Disfruto transformar ideas en proyectos reales 
+        mediante código limpio y buen diseño.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+// Animaciones al hacer scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const photo = document.querySelector('.about-photo');
+  const text = document.querySelector('.about-text');
+
+  function animateAbout() {
+    const section = document.querySelector('.about-section');
+    const rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100) {
+      photo.classList.add('show');
+      text.classList.add('show');
+    }
+  }
+
+  window.addEventListener('scroll', animateAbout);
+  animateAbout();
+});
+</script>
+
+</body>
+</html>

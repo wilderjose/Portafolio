@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habilidades - Wilder Suárez</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* --- RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- BODY --- */
+body.skills-body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #0f0f1f;
+  color: white;
+}
+
+/* --- NAVBAR --- */
+
+
+/* --- SKILLS SECTION --- */
+.skills-section {
+  max-width: 1100px;
+  margin: 20px 100px;
+  padding: 80px 30px;
+  text-align: center;
+}
+
+.skills-title {
+
+  color: #00eaff;
+  text-shadow: 0 0 15px #00eaff;
+  margin-bottom: 60px;
+}
+
+/* Tarjetas */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.card {
+  background: #1a1a2e;
+  padding: 20px;
+  border-radius: 15px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 0 20px #00eaff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #00eaff;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #00eaff;
+}
+
+.card p {
+  font-size: 14px;
+}
+
+/* Barras de habilidades */
+.skill {
+  margin: 20px 0;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skill-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 20px;
+  background: #1a1a2e;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-bar-inner {
+  height: 100%;
+  width: 0;
+  background: #00eaff;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+</style>
+</head>
+
+<body class="skills-body">
+
+<header class="navbar">
+  <h1 class="logo-title">Portafolio</h1>
+  <nav class="navbar-links">
+    <a class="home" href="index.html">Home</a>
+    <a class="as" class="about" href="#about">Perfil</a>
+    <a class="as" class="skills" href="abilidades.html">Habilidades</a>
+    <a class="as" class="contact" href="#contact">Contacto</a>
+  </nav>
+  <div class="navbar-buttons">
+    <a href="#contact" class="btn-outline">Hire Me</a>
+    <a href="#projects" class="btn-white">View Works</a>
+  </div>
+</header>
+
+<section class="skills-section">
+
+  <div class="cards">
+    <div class="card">
+      <h3>Programación</h3>
+      <p>Dart (Flutter), Python, C, React, HTML, CSS</p>
+    </div>
+    <div class="card">
+      <h3>Frameworks</h3>
+      <p>Flutter, desarrollo Android e iOS, desarrollo web</p>
+    </div>
+    <div class="card">
+      <h3>Redes</h3>
+      <p>Cisco Packet Tracer, GNS3, routers y switches</p>
+    </div>
+    <div class="card">
+      <h3>Control de Versiones</h3>
+      <p>Git, GitHub</p>
+    </div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Flutter</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="50%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Python</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="50%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">C/C++</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="60%"></div></div>
+  </div>
+  <div class="skill">
+    <div class="skill-name">Redes (Cisco/GNS3)</div>
+    <div class="skill-bar"><div class="skill-bar-inner" data-width="85%"></div></div>
+  </div>
+
+</section>
+
+<script>
+// Animación barras al hacer scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsSection = document.querySelector('.skills-section');
+  const skillBars = document.querySelectorAll('.skill-bar-inner');
+
+  function animateSkills() {
+    const rect = skillsSection.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100) {
+      skillBars.forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+      });
+    }
+  }
+
+  window.addEventListener('scroll', animateSkills);
+  animateSkills(); // Ejecutar al cargar por si ya está visible
+});
+</script>
+
+</body>
+</html>

@@ -24,12 +24,19 @@ body {
 }
 
 /* LINKS */
-a {
+.home {
   color: #00ffea;
   text-decoration: none;
 }
 
-a:hover {
+.home:hover {
+  text-shadow: 0 0 10px #00ffff;
+}
+.as{
+  color:white;
+  text-decoration: none;
+}
+.as:hover {
   text-shadow: 0 0 10px #00ffff;
 }
 
@@ -75,6 +82,7 @@ a:hover {
   border-radius: 25px;
   font-weight: bold;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .btn-outline {
@@ -121,14 +129,6 @@ a:hover {
   text-shadow: 0 0 15px #00ffff;
 }
 
-.profession {
-  margin-top: 10px;
-  font-size: 38px;
-  font-weight: bold;
-  color: white;
-  line-height: 1.3;
-  text-shadow: 0 0 8px #00d5ff;
-}
 
 .hero-buttons {
   margin-top: 25px;
@@ -145,6 +145,7 @@ a:hover {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .btn-white-big {
@@ -181,102 +182,7 @@ a:hover {
   box-shadow: 0 0 35px #00fff2;
 }
 
-/* ======== SECCIONES GENERALES ======== */
-.section {
-  padding: 80px 60px;
-  text-align: center;
-}
-
-.section-title {
-  color: #ff00ff;
-  text-shadow: 0 0 18px #ff00ff;
-  font-size: 32px;
-  margin-bottom: 25px;
-}
-
-/* ======== PERFIL ======== */
-.about-text {
-  max-width: 800px;
-  margin: auto;
-  color: white;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-/* ======== HABILIDADES ======== */
-.skill-cards {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
-}
-
-.card {
-  background: rgba(20, 20, 40, 0.7);
-  padding: 25px;
-  border-radius: 15px;
-  border: 1px solid #00ffea;
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0,255,234,0.2);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px #00ffee;
-}
-
-.sub-title {
-  margin-top: 50px;
-  color: #ff77ff;
-  text-shadow: 0 0 10px #ff00ff;
-}
-
-.skill {
-  max-width: 600px;
-  margin: 20px auto;
-  text-align: left;
-}
-
-.skill span {
-  font-size: 16px;
-  color: white;
-}
-
-.bar {
-  width: 100%;
-  background: #1a1a2e;
-  height: 12px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 5px;
-}
-
-.bar-inner {
-  height: 12px;
-  background: #00ffea;
-  width: 0;
-  box-shadow: 0 0 10px #00f6ff;
-  border-radius: 10px;
-  transition: width 1.5s ease-out;
-}
-
-/* ======== CONTACTO ======== */
-#contact p {
-  font-size: 18px;
-  color: white;
-  margin: 8px 0;
-}
-
 /* ======== FOOTER ======== */
-footer {
-  margin-top: 50px;
-  padding: 20px;
-  text-align: center;
-  color: white;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
 
 /* ======== RESPONSIVE ======== */
 @media (max-width: 900px) {
