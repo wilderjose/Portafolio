@@ -168,11 +168,10 @@ body {
 }
 
 .hero-img img.photo {
-  width: 280px;
-  height: 280px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   box-shadow: 0 0 25px #00fff2;
-  border: 3px solid #00ffea;
   object-fit: cover;
   transition: 0.3s;
 }

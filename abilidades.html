@@ -28,7 +28,7 @@ body.skills-body {
 .skills-section {
   max-width: 1090px;
   margin: 20px 100px;
-  padding: 80px 30px;
+  padding-top: 9rem;
   text-align: center;
 }
 
@@ -61,6 +61,7 @@ body.skills-body {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 30px #00eaff;
+  cursor: pointer;
 }
 
 .card h3 {
@@ -154,6 +155,7 @@ body.skills-body {
 </head>
 
 <body class="skills-body">
+<canvas id="matrixCanvas"></canvas>
 
 <header class="navbar">
   <h1 class="logo-title">Portafolio</h1>
@@ -207,5 +209,6 @@ body.skills-body {
     <div class="skill-bar"><div class="skill-bar-inner" data-width="85%"></div></div>
   </div>
 </section>
+<script src="scripts.js"></script>
 </body>
 </html>
