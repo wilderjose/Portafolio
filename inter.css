@@ -1,0 +1,128 @@
+.interfaces-section {
+  padding: 120px 8%;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #00fff7;
+}
+
+/* GRID */
+.interfaces-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.interface-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 247, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.interface-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 40px rgba(0, 255, 247, 0.4);
+}
+
+/* IMAGEN TIPO MÓVIL */
+.interface-card img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* TEXTO */
+.interface-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.interface-card p {
+  font-size: 14px;
+  color: #bfbfbf;
+}
+
+/* ========================= */
+/* RESPONSIVE - TELÉFONOS */
+/* ========================= */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar {
+    flex-direction: column;
+    padding: 15px 5%;
+    text-align: center;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .navbar-buttons {
+    margin-top: 15px;
+    gap: 10px;
+  }
+
+  /* SECCIÓN INTERFACES */
+  .interfaces-section {
+    padding: 90px 5%;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  /* GRID → 1 COLUMNA */
+  .interfaces-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  /* TARJETA */
+  .interface-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  /* IMAGEN */
+  .interface-card img {
+    max-height: 360px;
+  }
+
+  /* TEXTO */
+  .interface-card h3 {
+    font-size: 16px;
+  }
+
+  .interface-card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .interface-card img {
+    aspect-ratio: 9 / 16;
+    background: #000;
+    padding: 8px;
+  }
+}
+
